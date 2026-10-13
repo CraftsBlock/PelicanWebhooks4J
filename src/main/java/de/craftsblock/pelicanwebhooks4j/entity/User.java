@@ -31,17 +31,6 @@ public class User {
     private List<ServerUserSettings> serverSettings;
     private List<Role> roles;
     private List<Permission> permissions;
-    private int activity_count;
-    private int api_keys_count;
-    private int notifications_count;
-    private int permissions_count;
-    private int roles_count;
-    private int servers_count;
-    private int ssh_keys_count;
-    private int sub_servers_count;
-    private int subusers_count;
-    private int server_settings_count;
-    private int tokens_count;
 
     public int getId() {
         return id;
@@ -121,50 +110,6 @@ public class User {
 
     public List<Permission> getPermissions() {
         return permissions;
-    }
-
-    public int getActivityCount() {
-        return activity_count;
-    }
-
-    public int getApiKeysCount() {
-        return api_keys_count;
-    }
-
-    public int getNotificationsCount() {
-        return notifications_count;
-    }
-
-    public int getPermissionsCount() {
-        return permissions_count;
-    }
-
-    public int getRolesCount() {
-        return roles_count;
-    }
-
-    public int getServersCount() {
-        return servers_count;
-    }
-
-    public int getSshKeysCount() {
-        return ssh_keys_count;
-    }
-
-    public int getSubServersCount() {
-        return sub_servers_count;
-    }
-
-    public int getSubusersCount() {
-        return subusers_count;
-    }
-
-    public int getServerSettingsCount() {
-        return server_settings_count;
-    }
-
-    public int getTokensCount() {
-        return tokens_count;
     }
 
 }

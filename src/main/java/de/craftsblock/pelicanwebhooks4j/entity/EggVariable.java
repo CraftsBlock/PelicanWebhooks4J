@@ -22,7 +22,6 @@ public class EggVariable {
     private Egg egg;
     private boolean required;
     private List<ServerVariable> serverVariable;
-    private Integer server_variable_count;
     private String server_value;
 
     public int getId() {
@@ -83,10 +82,6 @@ public class EggVariable {
 
     public List<ServerVariable> getServerVariable() {
         return serverVariable;
-    }
-
-    public Integer getServerVariableCount() {
-        return server_variable_count;
     }
 
     public String getServerValue() {

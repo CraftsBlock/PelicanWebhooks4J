@@ -26,7 +26,6 @@ public class Schedule {
     private String status;
     private List<Task> tasks;
     private Server server;
-    private Integer tasks_count;
 
     public int getId() {
         return id;
@@ -102,10 +101,6 @@ public class Schedule {
 
     public Server getServer() {
         return server;
-    }
-
-    public Integer getTasksCount() {
-        return tasks_count;
     }
 
 }

@@ -15,9 +15,7 @@ public class BackupHost {
     private OffsetDateTime created_at;
     private OffsetDateTime updated_at;
     private List<Node> nodes;
-    private Integer nodes_count;
     private List<Backup> backups;
-    private Integer backups_count;
 
     public int getId() {
         return id;
@@ -47,15 +45,8 @@ public class BackupHost {
         return nodes;
     }
 
-    public Integer getNodesCount() {
-        return nodes_count;
-    }
-
     public List<Backup> getBackups() {
         return backups;
     }
 
-    public Integer getBackupsCount() {
-        return backups_count;
-    }
 }

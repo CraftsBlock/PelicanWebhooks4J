@@ -33,10 +33,9 @@ public class Egg {
     private List<String> file_denylist;
     private boolean force_outgoing_ip;
     private List<String> tags;
-    private List<String> startup_commands;
+    private Map<String, String> startup_commands;
 
     private List<Egg> children;
-    private Integer children_count;
 
     private Egg configFrom;
     private Egg scriptFrom;
@@ -55,13 +54,8 @@ public class Egg {
     private List<String> inherit_file_denylist;
 
     private List<Mount> mounts;
-    private Integer mounts_count;
-
     private List<Server> servers;
-    private Integer servers_count;
-
-    private List<EggVariable> variables;
-    private Integer variables_count;
+    private Map<String, EggVariable> variables;
 
     public int getId() {
         return id;
@@ -155,16 +149,12 @@ public class Egg {
         return tags;
     }
 
-    public List<String> getStartupCommands() {
+    public Map<String, String> getStartupCommands() {
         return startup_commands;
     }
 
     public List<Egg> getChildren() {
         return children;
-    }
-
-    public Integer getChildrenCount() {
-        return children_count;
     }
 
     public Egg getConfigFrom() {
@@ -219,23 +209,12 @@ public class Egg {
         return mounts;
     }
 
-    public Integer getMountsCount() {
-        return mounts_count;
-    }
-
     public List<Server> getServers() {
         return servers;
     }
 
-    public Integer getServersCount() {
-        return servers_count;
-    }
-
-    public List<EggVariable> getVariables() {
+    public Map<String, EggVariable> getVariables() {
         return variables;
     }
 
-    public Integer getVariablesCount() {
-        return variables_count;
-    }
 }

@@ -16,9 +16,7 @@ public class DatabaseHost {
     private OffsetDateTime created_at;
     private OffsetDateTime updated_at;
     private List<Database> databases;
-    private Integer databases_count;
     private List<Node> nodes;
-    private Integer nodes_count;
 
     public int getId() {
         return id;
@@ -56,16 +54,8 @@ public class DatabaseHost {
         return databases;
     }
 
-    public Integer getDatabasesCount() {
-        return databases_count;
-    }
-
     public List<Node> getNodes() {
         return nodes;
-    }
-
-    public Integer getNodesCount() {
-        return nodes_count;
     }
 
 }

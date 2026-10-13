@@ -17,7 +17,6 @@ public class Allocation {
     private OffsetDateTime updated_at;
     private Node node;
     private List<Server> servers;
-    private Integer servers_count;
     private Server server;
 
     public int getId() {
@@ -58,10 +57,6 @@ public class Allocation {
 
     public List<Server> getServers() {
         return servers;
-    }
-
-    public Integer getServersCount() {
-        return servers_count;
     }
 
     public Server getServer() {

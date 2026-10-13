@@ -13,11 +13,8 @@ public class Role {
     private OffsetDateTime updated_at;
     private NodeRole pivot;
     private List<Node> nodes;
-    private Integer nodes_count;
     private List<Permission> permissions;
-    private Integer permissions_count;
     private List<User> users;
-    private Integer users_count;
 
     public int getId() {
         return id;
@@ -47,24 +44,12 @@ public class Role {
         return nodes;
     }
 
-    public Integer getNodesCount() {
-        return nodes_count;
-    }
-
     public List<Permission> getPermissions() {
         return permissions;
     }
 
-    public Integer getPermissionsCount() {
-        return permissions_count;
-    }
-
     public List<User> getUsers() {
         return users;
-    }
-
-    public Integer getUsersCount() {
-        return users_count;
     }
 
 }

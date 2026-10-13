@@ -32,17 +32,11 @@ public class Node {
     private int daemon_connect;
     private List<String> tags;
     private List<Allocation> allocations;
-    private Integer allocations_count;
     private List<DatabaseHost> databaseHosts;
-    private Integer database_hosts_count;
     private List<Mount> mounts;
-    private Integer mounts_count;
     private List<Role> roles;
-    private Integer roles_count;
     private List<Server> servers;
-    private Integer servers_count;
     private List<BackupHost> backupHosts;
-    private Integer backup_hosts_count;
     private Integer servers_sum_memory;
     private Integer servers_sum_disk;
     private Integer servers_sum_cpu;
@@ -147,48 +141,24 @@ public class Node {
         return allocations;
     }
 
-    public Integer getAllocationsCount() {
-        return allocations_count;
-    }
-
     public List<DatabaseHost> getDatabaseHosts() {
         return databaseHosts;
-    }
-
-    public Integer getDatabaseHostsCount() {
-        return database_hosts_count;
     }
 
     public List<Mount> getMounts() {
         return mounts;
     }
 
-    public Integer getMountsCount() {
-        return mounts_count;
-    }
-
     public List<Role> getRoles() {
         return roles;
-    }
-
-    public Integer getRolesCount() {
-        return roles_count;
     }
 
     public List<Server> getServers() {
         return servers;
     }
 
-    public Integer getServersCount() {
-        return servers_count;
-    }
-
     public List<BackupHost> getBackupHosts() {
         return backupHosts;
-    }
-
-    public Integer getBackupHostsCount() {
-        return backup_hosts_count;
     }
 
     public Integer getServersSumMemory() {
