@@ -1,6 +1,9 @@
 package de.craftsblock.pelicanwebhooks4j;
 
-import com.google.gson.*;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
 import de.craftsblock.craftscore.event.EventPriority;
 import de.craftsblock.craftscore.event.ListenerRegistry;
 import de.craftsblock.pelicanwebhooks4j.adapter.OffsetDateTimeTypeAdapter;
@@ -13,6 +16,7 @@ import de.craftsblock.pelicanwebhooks4j.event.known.WebhookConfigurationEvent;
 import org.jetbrains.annotations.NotNull;
 
 import java.time.OffsetDateTime;
+import java.util.Map;
 import java.util.function.Consumer;
 
 public class PelicanWebhooks4J {
@@ -80,6 +84,10 @@ public class PelicanWebhooks4J {
     }
 
     public void dispatch(String message) {
+        this.dispatch(message, Map.of());
+    }
+
+    public void dispatch(String message, Map<String, String> headers) {
         try {
             JsonElement json = JsonParser.parseString(message);
             if (!json.isJsonObject()) {
@@ -96,6 +104,7 @@ public class PelicanWebhooks4J {
             }
 
             GenericWebhookEvent event = this.gson.fromJson(json, eventClass);
+            event.setHeaders(headers);
             event.setWebhookAction(eventAction);
             this.listenerRegistry.call(event);
         } catch (Exception exception) {

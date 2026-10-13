@@ -5,11 +5,11 @@ import org.jetbrains.annotations.Nullable;
 @SuppressWarnings("unused")
 public class Actor {
 
-    private long id;
+    private Integer id;
     private String type;
     private String username;
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 

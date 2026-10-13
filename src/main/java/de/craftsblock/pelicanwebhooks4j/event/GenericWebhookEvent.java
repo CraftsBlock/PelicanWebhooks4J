@@ -4,11 +4,13 @@ import de.craftsblock.craftscore.event.Event;
 import org.jetbrains.annotations.ApiStatus;
 
 import java.time.OffsetDateTime;
+import java.util.Map;
 
 @SuppressWarnings("unused")
 public class GenericWebhookEvent extends Event {
 
     private transient WebhookEventAction webhookEventAction;
+    private transient Map<String, String> headers;
 
     private String event;
     private OffsetDateTime timestamp;
@@ -32,4 +34,14 @@ public class GenericWebhookEvent extends Event {
         return webhookEventAction;
     }
 
+    @ApiStatus.Internal
+    public void setHeaders(Map<String, String> headers) {
+        if(this.headers == null) {
+            this.headers = headers;
+        }
+    }
+
+    public Map<String, String> getHeaders() {
+        return headers;
+    }
 }

@@ -3,10 +3,10 @@ package de.craftsblock.pelicanwebhooks4j.entity.activity;
 @SuppressWarnings("unused")
 public class Subject {
 
-    private long id;
+    private Integer id;
     private String type;
 
-    public long getId() {
+    public Integer getId() {
         return id;
     }
 

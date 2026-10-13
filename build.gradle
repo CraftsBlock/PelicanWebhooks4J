@@ -23,12 +23,6 @@ dependencies {
     // https://repo.craftsblock.de/#/releases/de/craftsblock/craftscore/event
     implementation "de.craftsblock.craftscore:event"
 
-    // https://repo.craftsblock.de/#/releases/de/craftsblock/craftscore/json
-    implementation "de.craftsblock.craftscore:json"
-
-    // https://repo.craftsblock.de/#/releases/de/craftsblock/craftscore/utils
-    implementation "de.craftsblock.craftscore:utils"
-
     // Third party ----------------------------------------------------------------------------------------
 
     // https://mvnrepository.com/artifact/org.jetbrains/annotations
