@@ -1,7 +1,9 @@
 package de.craftsblock.pelicanwebhooks4j.entity.activity;
 
+import de.craftsblock.pelicanwebhooks4j.entity.Entity;
+
 @SuppressWarnings("unused")
-public class Subject {
+public class Subject implements Entity {
 
     private Integer id;
     private String type;

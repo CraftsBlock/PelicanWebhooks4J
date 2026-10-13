@@ -1,13 +1,11 @@
 
 package de.craftsblock.pelicanwebhooks4j.entity;
 
-import java.time.OffsetDateTime;
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class ServerTransfer {
+public class ServerTransfer extends TimestampedEntity {
 
-    private int id;
     private int server_id;
     private Boolean successful;
     private int old_node;
@@ -16,16 +14,10 @@ public class ServerTransfer {
     private Integer new_allocation;
     private List<Integer> old_additional_allocations;
     private List<Integer> new_additional_allocations;
-    private OffsetDateTime created_at;
-    private OffsetDateTime updated_at;
     private boolean archived;
     private Node newNode;
     private Node oldNode;
     private Server server;
-
-    public int getId() {
-        return id;
-    }
 
     public int getServerId() {
         return server_id;
@@ -49,14 +41,6 @@ public class ServerTransfer {
 
     public List<Integer> getNewAdditionalAllocations() {
         return new_additional_allocations;
-    }
-
-    public OffsetDateTime getCreatedAt() {
-        return created_at;
-    }
-
-    public OffsetDateTime getUpdatedAt() {
-        return updated_at;
     }
 
     public boolean isArchived() {

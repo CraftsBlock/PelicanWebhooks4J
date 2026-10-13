@@ -3,12 +3,10 @@ package de.craftsblock.pelicanwebhooks4j.entity;
 import com.google.gson.annotations.SerializedName;
 
 import java.time.OffsetDateTime;
-import java.util.List;
 
 @SuppressWarnings("unused")
-public class Backup {
+public class Backup extends TimestampedEntity {
 
-    private int id;
     private int server_id;
     private String uuid;
     private String name;
@@ -18,8 +16,6 @@ public class Backup {
     private String checksum;
     private Integer bytes;
     private OffsetDateTime completed_at;
-    private OffsetDateTime created_at;
-    private OffsetDateTime updated_at;
     @SerializedName("is_successful")
     private boolean successful;
     private String upload_id;
@@ -28,10 +24,6 @@ public class Backup {
     @SerializedName("is_scheduled")
     private boolean scheduled;
     private Server server;
-
-    public int getId() {
-        return id;
-    }
 
     public int getServerId() {
         return server_id;
@@ -63,14 +55,6 @@ public class Backup {
 
     public OffsetDateTime getCompletedAt() {
         return completed_at;
-    }
-
-    public OffsetDateTime getCreatedAt() {
-        return created_at;
-    }
-
-    public OffsetDateTime getUpdatedAt() {
-        return updated_at;
     }
 
     public boolean isSuccessful() {

@@ -3,7 +3,7 @@ package de.craftsblock.pelicanwebhooks4j.entity;
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class Mount {
+public class Mount implements Entity {
 
     private int id;
     private String uuid;

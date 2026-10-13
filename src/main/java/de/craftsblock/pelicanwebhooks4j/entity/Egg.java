@@ -1,18 +1,14 @@
 package de.craftsblock.pelicanwebhooks4j.entity;
 
-import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("unused")
-public class Egg {
+public class Egg extends TimestampedEntity {
 
-    private int id;
     private String uuid;
     private String name;
     private String description;
-    private OffsetDateTime created_at;
-    private OffsetDateTime updated_at;
 
     private Integer config_from;
     private String config_stop;
@@ -57,10 +53,6 @@ public class Egg {
     private List<Server> servers;
     private Map<String, EggVariable> variables;
 
-    public int getId() {
-        return id;
-    }
-
     public String getUuid() {
         return uuid;
     }
@@ -71,14 +63,6 @@ public class Egg {
 
     public String getDescription() {
         return description;
-    }
-
-    public OffsetDateTime getCreatedAt() {
-        return created_at;
-    }
-
-    public OffsetDateTime getUpdatedAt() {
-        return updated_at;
     }
 
     public Integer getConfigFromId() {

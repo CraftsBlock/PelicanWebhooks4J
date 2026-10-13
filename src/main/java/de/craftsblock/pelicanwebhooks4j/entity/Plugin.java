@@ -3,7 +3,7 @@ package de.craftsblock.pelicanwebhooks4j.entity;
 import com.google.gson.annotations.SerializedName;
 
 @SuppressWarnings("unused")
-public class Plugin {
+public class Plugin implements Entity {
 
     private String id;
     private String name;

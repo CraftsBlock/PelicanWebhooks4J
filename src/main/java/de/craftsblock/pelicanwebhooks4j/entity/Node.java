@@ -1,13 +1,11 @@
 
 package de.craftsblock.pelicanwebhooks4j.entity;
 
-import java.time.OffsetDateTime;
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class Node {
+public class Node extends TimestampedEntity {
 
-    private int id;
     private boolean public_node;
     private String name;
     private String fqdn;
@@ -21,8 +19,6 @@ public class Node {
     private int daemon_listen;
     private int daemon_sftp;
     private String daemon_base;
-    private OffsetDateTime created_at;
-    private OffsetDateTime updated_at;
     private int upload_size;
     private boolean behind_proxy;
     private String description;
@@ -40,10 +36,6 @@ public class Node {
     private Integer servers_sum_memory;
     private Integer servers_sum_disk;
     private Integer servers_sum_cpu;
-
-    public int getId() {
-        return id;
-    }
 
     public boolean isPublicNode() {
         return public_node;
@@ -95,14 +87,6 @@ public class Node {
 
     public String getDaemonBase() {
         return daemon_base;
-    }
-
-    public OffsetDateTime getCreatedAt() {
-        return created_at;
-    }
-
-    public OffsetDateTime getUpdatedAt() {
-        return updated_at;
     }
 
     public int getUploadSize() {

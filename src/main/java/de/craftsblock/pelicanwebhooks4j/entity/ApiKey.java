@@ -5,13 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("unused")
-public class ApiKey {
+public class ApiKey extends TimestampedEntity {
 
-    private int id;
     private String token;
     private List<String> allowed_ips;
-    private OffsetDateTime created_at;
-    private OffsetDateTime updated_at;
     private Integer user_id;
     private String memo;
     private String identifier;
@@ -21,24 +18,12 @@ public class ApiKey {
     private Map<String, Integer> permissions;
     private User user;
 
-    public int getId() {
-        return id;
-    }
-
     public String getToken() {
         return token;
     }
 
     public List<String> getAllowedIps() {
         return allowed_ips;
-    }
-
-    public OffsetDateTime getCreatedAt() {
-        return created_at;
-    }
-
-    public OffsetDateTime getUpdatedAt() {
-        return updated_at;
     }
 
     public Integer getUserId() {

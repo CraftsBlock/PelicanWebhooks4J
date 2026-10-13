@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("unused")
-public class Server {
+public class Server extends TimestampedEntity {
 
     private String uuid;
     private String uuid_short;
@@ -20,8 +20,6 @@ public class Server {
     private int cpu;
     private int egg_id;
     private String startup;
-    private OffsetDateTime created_at;
-    private OffsetDateTime updated_at;
     private Integer allocation_id;
     private String image;
     private String description;
@@ -51,7 +49,6 @@ public class Server {
     private ServerTransfer transfer;
     private User user;
     private List<EggVariable> variables;
-    private int id;
 
     public String getUuid() {
         return uuid;
@@ -99,14 +96,6 @@ public class Server {
 
     public String getStartup() {
         return startup;
-    }
-
-    public OffsetDateTime getCreatedAt() {
-        return created_at;
-    }
-
-    public OffsetDateTime getUpdatedAt() {
-        return updated_at;
     }
 
     public Integer getAllocationId() {
@@ -223,10 +212,6 @@ public class Server {
 
     public List<EggVariable> getVariables() {
         return variables;
-    }
-
-    public int getId() {
-        return id;
     }
 
 }

@@ -5,9 +5,8 @@ import java.time.OffsetDateTime;
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class Schedule {
+public class Schedule extends TimestampedEntity {
 
-    private int id;
     private int server_id;
     private String name;
     private String cron_day_of_week;
@@ -21,15 +20,9 @@ public class Schedule {
     private boolean only_when_online;
     private OffsetDateTime last_run_at;
     private OffsetDateTime next_run_at;
-    private OffsetDateTime created_at;
-    private OffsetDateTime updated_at;
     private String status;
     private List<Task> tasks;
     private Server server;
-
-    public int getId() {
-        return id;
-    }
 
     public int getServerId() {
         return server_id;
@@ -81,14 +74,6 @@ public class Schedule {
 
     public OffsetDateTime getNextRunAt() {
         return next_run_at;
-    }
-
-    public OffsetDateTime getCreatedAt() {
-        return created_at;
-    }
-
-    public OffsetDateTime getUpdatedAt() {
-        return updated_at;
     }
 
     public String getStatus() {

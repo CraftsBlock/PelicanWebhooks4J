@@ -3,19 +3,15 @@ package de.craftsblock.pelicanwebhooks4j.entity;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("unused")
-public class User {
+public class User extends TimestampedEntity {
 
-    private int id;
     private String uuid;
     private String email;
     private String language;
-    private OffsetDateTime created_at;
-    private OffsetDateTime updated_at;
     private String username;
     private String external_id;
     private String timezone;
@@ -32,10 +28,6 @@ public class User {
     private List<Role> roles;
     private List<Permission> permissions;
 
-    public int getId() {
-        return id;
-    }
-
     public String getUuid() {
         return uuid;
     }
@@ -46,14 +38,6 @@ public class User {
 
     public String getLanguage() {
         return language;
-    }
-
-    public OffsetDateTime getCreatedAt() {
-        return created_at;
-    }
-
-    public OffsetDateTime getUpdatedAt() {
-        return updated_at;
     }
 
     public String getUsername() {

@@ -1,7 +1,7 @@
 package de.craftsblock.pelicanwebhooks4j.entity;
 
 @SuppressWarnings("unused")
-public class NodeRole {
+public class NodeRole implements Entity {
 
     private int node_id;
     private int role_id;

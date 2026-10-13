@@ -1,11 +1,10 @@
 package de.craftsblock.pelicanwebhooks4j.entity;
 
-import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("unused")
-public class WebhookConfiguration {
+public class WebhookConfiguration extends TimestampedEntity {
 
     private String scope;
     private String type;
@@ -15,9 +14,6 @@ public class WebhookConfiguration {
     private String endpoint;
     private Map<String, String> headers;
     private List<String> events;
-    private OffsetDateTime updated_at;
-    private OffsetDateTime created_at;
-    private int id;
 
     public String getScope() {
         return scope;
@@ -49,18 +45,6 @@ public class WebhookConfiguration {
 
     public List<String> getEvents() {
         return events;
-    }
-
-    public OffsetDateTime getUpdatedAt() {
-        return updated_at;
-    }
-
-    public OffsetDateTime getCreatedAt() {
-        return created_at;
-    }
-
-    public int getId() {
-        return id;
     }
 
 }

@@ -1,26 +1,18 @@
 
 package de.craftsblock.pelicanwebhooks4j.entity;
 
-import java.time.OffsetDateTime;
 import java.util.List;
 
 @SuppressWarnings("unused")
-public class DatabaseHost {
+public class DatabaseHost extends TimestampedEntity {
 
-    private int id;
     private String name;
     private String host;
     private int port;
     private String username;
     private Integer max_databases;
-    private OffsetDateTime created_at;
-    private OffsetDateTime updated_at;
     private List<Database> databases;
     private List<Node> nodes;
-
-    public int getId() {
-        return id;
-    }
 
     public String getName() {
         return name;
@@ -40,14 +32,6 @@ public class DatabaseHost {
 
     public Integer getMaxDatabases() {
         return max_databases;
-    }
-
-    public OffsetDateTime getCreatedAt() {
-        return created_at;
-    }
-
-    public OffsetDateTime getUpdatedAt() {
-        return updated_at;
     }
 
     public List<Database> getDatabases() {
