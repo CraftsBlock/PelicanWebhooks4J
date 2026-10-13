@@ -57,7 +57,7 @@ public class PelicanWebhooks4J {
 
             Class<? extends GenericWebhookEvent> eventClass = eventRegistry.getEventClass(eventName, eventAction);
             if (eventClass == null) {
-                throw new IllegalStateException("No event class found for " + eventName + " and action " + eventAction);
+                throw new IllegalStateException("No event class found for " + eventName + " with action " + eventAction);
             }
 
             GenericWebhookEvent event = this.gson.fromJson(json, eventClass);
