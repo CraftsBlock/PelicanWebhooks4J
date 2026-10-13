@@ -95,8 +95,7 @@ public class PelicanWebhooks4J {
 
     public static class Builder {
 
-        private final GsonBuilder gsonBuilder;
-
+        private GsonBuilder gsonBuilder;
         private ListenerRegistry listenerRegistry;
         private Consumer<Exception> exceptionHandler;
 
@@ -113,12 +112,28 @@ public class PelicanWebhooks4J {
             });
         }
 
-        public void setListenerRegistry(ListenerRegistry listenerRegistry) {
+        public void setGsonBuilder(@NotNull GsonBuilder gsonBuilder) {
+            this.gsonBuilder = gsonBuilder;
+        }
+
+        public GsonBuilder getGsonBuilder() {
+            return gsonBuilder;
+        }
+
+        public void setListenerRegistry(@NotNull ListenerRegistry listenerRegistry) {
             this.listenerRegistry = listenerRegistry;
         }
 
-        public void setExceptionHandler(Consumer<Exception> exceptionHandler) {
+        public ListenerRegistry getListenerRegistry() {
+            return listenerRegistry;
+        }
+
+        public void setExceptionHandler(@NotNull Consumer<Exception> exceptionHandler) {
             this.exceptionHandler = exceptionHandler;
+        }
+
+        public Consumer<Exception> getExceptionHandler() {
+            return exceptionHandler;
         }
 
         public PelicanWebhooks4J build() {
