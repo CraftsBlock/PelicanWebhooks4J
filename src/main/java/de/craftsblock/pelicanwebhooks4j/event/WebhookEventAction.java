@@ -1,33 +1,31 @@
 package de.craftsblock.pelicanwebhooks4j.event;
 
-public enum WebhookEventAction {
+import de.craftsblock.pelicanwebhooks4j.event.known.ActivityLoggedEvent;
 
-    EVENT("event"),
+public record WebhookEventAction(
+        String identifier,
+        Class<? extends GenericWebhookEvent> fallbackEventClass,
+        boolean activity
+) {
 
-    CREATED("created"),
-    DELETED("deleted"),
-    UPDATED("updated"),
+    public static final WebhookEventAction EVENT = of("event");
 
-    SERVER_ACTIVITY(null);
+    public static final WebhookEventAction CREATED = of("created");
+    public static final WebhookEventAction DELETED = of("deleted");
+    public static final WebhookEventAction UPDATED = of("updated");
 
-    private final String identifier;
+    public static final WebhookEventAction UNKNOWN_ACTIVITY = of(null, ActivityLoggedEvent.class, true);
+    public static final WebhookEventAction AUTH_ACTIVITY = of("auth", ActivityLoggedEvent.class, true);
+    public static final WebhookEventAction SERVER_ACTIVITY = of("server", ActivityLoggedEvent.class, true);
 
-    WebhookEventAction(String identifier) {
-        this.identifier = identifier;
+    private static WebhookEventAction of(String identifier) {
+        return of(identifier, null, false);
     }
 
-    public String getIdentifier() {
-        return this.identifier;
+    private static WebhookEventAction of(String identifier, Class<? extends GenericWebhookEvent> fallbackEventClass,
+                                         boolean activity) {
+        return new WebhookEventAction(identifier, fallbackEventClass, activity);
     }
 
-    public static WebhookEventAction parse(String state) {
-        return switch (state.toLowerCase()) {
-            case "event" -> EVENT;
-            case "created" -> CREATED;
-            case "deleted" -> DELETED;
-            case "updated" -> UPDATED;
-            default -> SERVER_ACTIVITY;
-        };
-    }
 
 }
