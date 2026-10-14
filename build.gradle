@@ -1,9 +1,18 @@
 plugins {
-    id 'java'
+    id "java"
+    id "de.craftsblock.gradle.publish" version "0.0.21"
 }
 
-group = 'de.craftsblock'
-version = '1.0-SNAPSHOT'
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+
+    withJavadocJar()
+    withSourcesJar()
+}
+
+group = 'de.craftsblock.pelican'
+version = '0.1.0'
 
 repositories {
     mavenCentral()
@@ -32,6 +41,32 @@ dependencies {
     implementation "com.google.code.gson:gson:2.14.0"
 }
 
-test {
-    useJUnitPlatform()
+craftsPublish {
+    artifactId = "pelicanwebhooks4j"
+    name = "PelicanWebhooks4J"
+
+    component = project.components.java
+
+    pom {
+        name = "PelicanWebhooks4J"
+        description = "Simple parser and event system for webhooks from the pelican panel"
+
+        scm {
+            url = "https://github.com/CraftsBlock/PelicanWebhooks4J"
+            connection = "scm:git:git://github.com/CraftsBlock/PelicanWebhooks4J.git"
+            developerConnection = "scm:git:git@github.com:CraftsBlock/PelicanWebhooks4J.git"
+        }
+
+        issueManagement {
+            system = "github"
+            url = "https://github.com/CraftsBlock/PelicanWebhooks4J/issues"
+        }
+
+        licenses {
+            license {
+                name = "GNU General Public License v3.0"
+                url = "https://github.com/CraftsBlock/PelicanWebhooks4J/blob/develop/LICENSE"
+            }
+        }
+    }
 }
