@@ -1,6 +1,7 @@
 package de.craftsblock.pelicanwebhooks4j.event;
 
 import de.craftsblock.pelicanwebhooks4j.event.known.ActivityLoggedEvent;
+import org.jetbrains.annotations.NotNull;
 
 public record WebhookEventAction(
         String identifier,
@@ -27,5 +28,9 @@ public record WebhookEventAction(
         return new WebhookEventAction(identifier, fallbackEventClass, activity);
     }
 
+    @Override
+    public @NotNull String toString() {
+        return identifier;
+    }
 
 }

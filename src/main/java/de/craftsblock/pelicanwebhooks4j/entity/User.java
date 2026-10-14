@@ -18,7 +18,7 @@ public class User extends TimestampedEntity {
     private boolean mfa_email_enabled;
     @SerializedName("is_managed_externally")
     private boolean managedExternally;
-    private Map<String, Object> customization;
+    private String customization;
     private List<Server> servers;
     private List<ApiKey> apiKeys;
     private List<UserSSHKey> sshKeys;
@@ -60,7 +60,7 @@ public class User extends TimestampedEntity {
         return managedExternally;
     }
 
-    public Map<String, Object> getCustomization() {
+    public String getCustomization() {
         return customization;
     }
 
